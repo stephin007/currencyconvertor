@@ -10,8 +10,13 @@ import './App.css';
     return(
       <Fragment>
         <div className="header">
-          <img src={logo} alt="Logo" className="logo-img"/>
-          <h1 className="logo-text">Monetæ</h1>
+          {/* <img src={logo} alt="Logo" className="logo-img"/>
+          <h1 className="logo-text">Monetæ</h1> */}
+
+          <ul>
+            <li><img src={logo} alt="Logo" className="logo-img"/></li>
+            <li><h1 className="logo-text">Monetæ</h1></li>
+          </ul>
         </div>
 
       </Fragment>

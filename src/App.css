@@ -13,13 +13,18 @@ html {
 *:before, 
 *:after {
   box-sizing: inherit;
+  outline: none;
 }
 
 body{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: 'Grenze Gotisch', cursive;
   background-image: url(https://images.pexels.com/photos/3671146/pexels-photo-3671146.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-  background-size: cover;
-  height: 95vh;
+  min-height: 95vh;
+  text-align: center;
   background-position: left;
 }
 
@@ -42,7 +47,7 @@ ul li img{
 ul li h1{
   margin-top: 0px;
   font-size: 40px;
-  background: -webkit-linear-gradient(#FBA82E, brown);
+  background: -webkit-linear-gradient(rgb(173, 0, 0), ORANGE);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -50,7 +55,7 @@ ul li h1{
 
 .header .currency-main{
   width: 375px;
-  background: whitesmoke;
+  background: white;
   padding: 50px;
   margin: 100px auto;
   margin-top: 0px;
@@ -70,14 +75,29 @@ ul li h1{
   margin-top: -20px;
 }
 
-.header .currency-main .select-options{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.input{
+  border: 2px solid rgb(173, 0, 0);
+  border-radius: 1em;
+  padding: .99rem;
+  background-color: whitesmoke;
 }
 
-.header .currency-main .select-options select{
-  padding: 10px;
+select{
+  margin-left: .5rem;
+  margin-top: .5rem;
+  padding: 15px 15px;
   border-radius: 5px;
-  margin-bottom: 15px;
+  background-color: whitesmoke;
+  border: none;
+}
+
+.equals{
+  font-weight: 800;
+  font-size: 55px;
+}
+
+@media (max-width: 408px){
+  .header .currency-main{
+    width: 305px;
+  }
 }

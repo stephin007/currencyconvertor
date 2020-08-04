@@ -1,13 +1,65 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 
-import {ConvertApi} from './API/ConvertApi'
-
+// COMPONENTS
+import Currency from './Currency'
+// Assets
 import logo from './img/logo.png'
 
+// CSS
 import './App.css';
 
- export default class App extends React.Component {
-  render(){
+// API
+const BASE_URL = 'https://api.exchangeratesapi.io/latest'
+
+ export default function App(){
+  const [currencyOptions, setCurrencyOptions] = useState([])
+  const [fromCurrency, setFromCurrency] = useState()
+  const [toCurrency, setToCurrency] = useState()
+  const [exchangeRate, setExchangeRate] = useState()
+  const [amount, setAmount] = useState(1)
+  const [amountInFromCurrency, setAmountInFromCurrency] = useState(true);
+
+
+  let toAmount, fromAmount
+  if(amountInFromCurrency){
+    fromAmount = amount
+    toAmount = amount * exchangeRate
+  }else{
+    toAmount = amount
+    fromAmount = amount / exchangeRate
+  }
+
+  useEffect(() => {
+        fetch(BASE_URL)
+          .then(res=> res.json())
+          .then(data => {
+            const firstCurrency = Object.keys(data.rates)[26]
+            setCurrencyOptions(['INR', ...Object.keys(data.rates)])
+            setFromCurrency('INR')
+            setToCurrency(firstCurrency)
+            setExchangeRate(data.rates[firstCurrency])
+          })
+    }, [])
+
+    useEffect(() => {
+      if (fromCurrency != null && toCurrency != null) {
+        fetch(`${BASE_URL}?base=${fromCurrency}&symbols=${toCurrency}`)
+          .then(res => res.json())
+          .then(data => setExchangeRate(data.rates[toCurrency]))
+      }
+    }, [fromCurrency, toCurrency])
+
+    function handleFromAmountChange(e){
+      setAmount(e.target.value)
+      setAmountInFromCurrency(true)
+    }
+
+    function handleToAmountChange(e){
+      setAmount(e.target.value)
+      setAmountInFromCurrency(false)
+    }
+
+
     return(
       <Fragment>
         <div className="header">
@@ -23,22 +75,25 @@ import './App.css';
             <div className="title">
               <h1>Currency Convertor</h1>
             </div>
-              <div className="select-options">
-                <select name="slt1" id="slt-1">
-                  <option >Select A Currency</option>
-                  <option value="usd">USD</option>
-                  <option value="inr">INR</option>
-                </select>
-                <select name="slt2" id="slt-2">
-                  <option >Select A Currency</option>
-                  <option value="usd">USD</option>
-                  <option value="inr">INR</option>
-                </select>
-              </div>
+            <Currency 
+              currencyOptions={currencyOptions}
+              selectedCurrency={fromCurrency}
+              onChangeCurrency={e => setFromCurrency(e.target.value)}
+              onChangeAmount={handleFromAmountChange}
+              amount={fromAmount}
+            />
+            <div className="equals">=</div>
+            <Currency 
+              currencyOptions={currencyOptions}
+              selectedCurrency={toCurrency}
+              onChangeCurrency={e => setToCurrency(e.target.value)}
+              onChangeAmount={handleToAmountChange}
+              amount= {toAmount}
+            />  
           </div>
         </div>
 
       </Fragment>
     )
-  }
 }
+

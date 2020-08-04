@@ -33,9 +33,9 @@ const BASE_URL = 'https://api.exchangeratesapi.io/latest'
         fetch(BASE_URL)
           .then(res=> res.json())
           .then(data => {
-            const firstCurrency = Object.keys(data.rates)[26]
-            setCurrencyOptions(['INR', ...Object.keys(data.rates)])
-            setFromCurrency('INR')
+            const firstCurrency = Object.keys(data.rates)[11]
+            setCurrencyOptions([data.base, ...Object.keys(data.rates)])
+            setFromCurrency(data.base)
             setToCurrency(firstCurrency)
             setExchangeRate(data.rates[firstCurrency])
           })
@@ -91,6 +91,9 @@ const BASE_URL = 'https://api.exchangeratesapi.io/latest'
               amount= {toAmount}
             />  
           </div>
+        </div>
+        <div className="social-link no-select">
+            <a href="https://github.com/stephin007" target="_blank" rel = "noopener noreferrer"><i className= "fa fa-github"></i></a>
         </div>
 
       </Fragment>

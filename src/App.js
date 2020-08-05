@@ -1,5 +1,5 @@
 import React, {Fragment, useEffect, useState} from 'react';
-
+import ReactGa from 'react-ga'
 // COMPONENTS
 import Currency from './Currency'
 // Assets
@@ -12,6 +12,17 @@ import './App.css';
 const BASE_URL = 'https://api.exchangeratesapi.io/latest'
 
  export default function App(){
+
+  useEffect(
+    () => {
+      ReactGa.initialize('UA-174554368-1')
+
+      // to report page view
+      ReactGa.pageview('/')
+    },
+    [],
+  )
+
   const [currencyOptions, setCurrencyOptions] = useState([])
   const [fromCurrency, setFromCurrency] = useState()
   const [toCurrency, setToCurrency] = useState()

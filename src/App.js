@@ -93,7 +93,7 @@ const BASE_URL = 'https://api.exchangeratesapi.io/latest'
           </div>
         </div>
         <div className="social-link no-select">
-            <a href="https://github.com/stephin007" target="_blank" rel = "noopener noreferrer"><i className= "fa fa-github"></i></a>
+            <a href="https://github.com/stephin007/currencyconvertor" target="_blank" rel = "noopener noreferrer"><i className= "fa fa-github"></i></a>
         </div>
 
       </Fragment>

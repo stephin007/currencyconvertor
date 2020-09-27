@@ -44,7 +44,8 @@ const BASE_URL = 'https://api.exchangeratesapi.io/latest'
         fetch(BASE_URL)
           .then(res=> res.json())
           .then(data => {
-            const firstCurrency = Object.keys(data.rates)[11]
+          console.log(data)
+            const firstCurrency = Object.keys(data.rates)[29]
             setCurrencyOptions([data.base, ...Object.keys(data.rates)])
             setFromCurrency(data.base)
             setToCurrency(firstCurrency)

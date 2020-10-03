@@ -1,5 +1,5 @@
 <p align="center">
-   <img src="https://github.com/stephin007/currencyconvertor/blob/logo.png?raw=true" alt="Monetae"/>
+   <img src="https://github.com/LuizHAP/currencyconvertor/blob/master/blob/Monetae.PNG" alt="Monetae"/>
 </p>
 
 > :money_with_wings: Project made to convert CURRENCIES from different COUNTRIES

@@ -90,6 +90,7 @@ select{
   border-radius: 5px;
   background-color: whitesmoke;
   border: none;
+  width: 100%;
 }
 
 .equals{

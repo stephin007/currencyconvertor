@@ -55,7 +55,7 @@ ul li h1{
 }
 
 .header .currency-main{
-  width: 375px;
+  width: 450px;
   background: white;
   padding: 50px;
   margin: 100px auto;
@@ -84,7 +84,7 @@ ul li h1{
 }
 
 select{
-  margin-left: .5rem;
+  margin-left: .1rem;
   margin-top: .5rem;
   padding: 15px 15px;
   border-radius: 5px;

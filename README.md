@@ -1,3 +1,5 @@
+![CodeQL](https://github.com/stephin007/currencyconvertor/workflows/CodeQL/badge.svg)
+
 <p align="center">
    <img src="https://github.com/stephin007/currencyconvertor/blob/master/blob/Monetae.PNG" alt="Monetae"/>
 </p>

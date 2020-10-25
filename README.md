@@ -1,4 +1,8 @@
 ![CodeQL](https://github.com/stephin007/currencyconvertor/workflows/CodeQL/badge.svg)
+[![GitHub issues](https://img.shields.io/github/issues/stephin007/currencyconvertor)](https://github.com/stephin007/currencyconvertor/issues)
+[![GitHub forks](https://img.shields.io/github/forks/stephin007/currencyconvertor)](https://github.com/stephin007/currencyconvertor/network)
+[![GitHub stars](https://img.shields.io/github/stars/stephin007/currencyconvertor)](https://github.com/stephin007/currencyconvertor/stargazers)
+[![GitHub license](https://img.shields.io/github/license/stephin007/currencyconvertor)](https://github.com/stephin007/currencyconvertor)
 
 <p align="center">
    <img src="https://github.com/stephin007/currencyconvertor/blob/master/blob/Monetae.PNG" alt="Monetae"/>
